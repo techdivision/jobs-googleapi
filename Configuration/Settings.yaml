@@ -1,0 +1,41 @@
+Neos:
+  Neos:
+    userInterface:
+      translation:
+        autoInclude:
+          TechDivision.Jobs.GoogleApi:
+            - 'NodeTypes/*'
+            - 'BackendModule'
+            -
+    modules:
+      'administration':
+        submodules:
+          'google-job-api':
+            label: 'TechDivision.Jobs.GoogleApi:BackendModule:title'
+            controller: 'TechDivision\Jobs\GoogleApi\Controller\BackendModuleController'
+            description: 'TechDivision.Jobs.GoogleApi:BackendModule:description'
+            icon: 'icon-briefcase'
+    fusion:
+      autoInclude:
+        TechDivision.Jobs.GoogleApi: true
+
+  Flow:
+    log:
+      publishingLogger:
+        backend: Neos\Flow\Log\Backend\FileBackend
+        backendOptions:
+          logFileURL: '%FLOW_PATH_DATA%Logs/GooglePublishing.log'
+          severityThreshold: '%LOG_INFO%'
+          createParentDirectories: true
+          maximumLogFileSize: 1048576
+          logFilesToKeep: 1
+
+TechDivision:
+  Jobs:
+    GoogleApi:
+      enableApiCallOnJobDeletion: false
+
+Flowpack:
+  GoogleApiClient:
+    applicationName: ''
+

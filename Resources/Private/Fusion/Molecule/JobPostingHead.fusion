@@ -1,0 +1,16 @@
+prototype(TechDivision.Jobs.GoogleApi:Molecule.JobPostingHead) < prototype(Neos.Fusion:Component) {
+
+    renderer = afx`
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Last modified</th>
+                <th>Last crawl</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+    `
+}
+
+
+

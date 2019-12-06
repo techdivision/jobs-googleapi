@@ -1,0 +1,52 @@
+prototype(TechDivision.Jobs.GoogleApi:ShowJobPostingsForSite) < prototype(TechDivision.Jobs.GoogleApi:Page.DefaultPage) {
+
+    /**
+    * Api
+    * jobPostings => all available jobPostings
+    * siteDimension => selected dimension
+    * siteNode => site-package name
+    */
+
+    body.teaserTitle = 'Available JobPostings'
+    body.teaserText = ''
+
+    @context.jobPostingItemRenderer = Neos.Fusion:Loop {
+        items = ${jobPostings}
+        itemName = 'jobPosting'
+        itemRenderer = TechDivision.Jobs.GoogleApi:Molecule.JobPostingBody {
+            title = ${q(jobPosting).property('jobPostingTitle')}
+            lastModified = ${Date.format(q(jobPosting).property('_lastPublicationDateTime'), 'Y-m-d')}
+            identifier = ${jobPosting.identifier}
+        }
+    }
+
+    body.content = afx`
+        <Neos.Fusion.Form:Form actionUri.action="sendJobPostingUrisToGoogleApi" >
+
+            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer name="siteNodeName" label="" >
+                <Neos.Fusion.Form:Select>
+                    <Neos.Fusion.Form:Select.Option value={siteNode}>{siteNode}</Neos.Fusion.Form:Select.Option>
+                </Neos.Fusion.Form:Select>
+            </Neos.Fusion.Form:Neos.BackendModule.FieldContainer>
+            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer name="siteDimension" label="" >
+                <Neos.Fusion.Form:Select>
+                    <Neos.Fusion.Form:Select.Option value={siteDimension}>{siteDimension}</Neos.Fusion.Form:Select.Option>
+                </Neos.Fusion.Form:Select>
+            </Neos.Fusion.Form:Neos.BackendModule.FieldContainer>
+
+            <table style="width:100%;">
+                <TechDivision.Jobs.GoogleApi:Molecule.JobPostingHead />
+                <Neos.Fusion.Form:Neos.BackendModule.FieldContainer name="nodesToUpdate" label="" >
+                    <tbody>
+                    {jobPostingItemRenderer}
+                    </tbody>
+                </Neos.Fusion.Form:Neos.BackendModule.FieldContainer>
+            </table>
+
+            <div style="float:right; padding: 50px 150px;">
+                <Neos.Fusion.Form:Button>Update</Neos.Fusion.Form:Button>
+            </div>
+
+        </Neos.Fusion.Form:Form>
+    `
+}

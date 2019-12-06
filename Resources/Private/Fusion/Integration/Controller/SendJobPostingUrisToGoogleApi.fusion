@@ -1,0 +1,8 @@
+prototype(TechDivision.Jobs.GoogleApi:SendJobPostingUrisToGoogleApi) < prototype(TechDivision.Jobs.GoogleApi:Page.DefaultPage) {
+
+    body.teaserTitle = 'JobPostings updated'
+    body.teaserText = ''
+
+    body.content = afx`
+    `
+}

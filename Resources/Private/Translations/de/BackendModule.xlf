@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="TechDivision.Jobs.GoogleApi" source-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="title" xml:space="preserve">
+				 <target xml:lang="de" state="translated">Job Indexing</target>
+			</trans-unit>
+			<trans-unit id="description" xml:space="preserve">
+				 <target xml:lang="de" state="translated">Job Indexing</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

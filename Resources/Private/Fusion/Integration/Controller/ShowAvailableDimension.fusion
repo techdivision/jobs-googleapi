@@ -1,0 +1,39 @@
+prototype(TechDivision.Jobs.GoogleApi:ShowAvailableDimension) < prototype(TechDivision.Jobs.GoogleApi:Page.DefaultPage) {
+
+    /**
+    * Api
+    * site => selected site-package
+    * dimensions => all available dimensions in this site-package
+    * rootNodes => rootNode from each dimension
+    */
+
+    body.teaserTitle = ${'Select Dimension for ' + site}
+    body.teaserText = ''
+
+    @context.siteDimension = Neos.Fusion:Loop {
+        items = ${dimensions}
+        itemName = 'dimension'
+        itemKey = 'siteDimension'
+        itemRenderer = Neos.Fusion:Component {
+            renderer = afx`
+                <Neos.Fusion.Form:Select.Option value={dimension} >{dimension}</Neos.Fusion.Form:Select.Option>
+            `
+        }
+    }
+
+    body.content = afx`
+        <Neos.Fusion.Form:Form actionUri.action="showJobPostingsForSite" >
+            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer name="siteNodeName" label="" >
+                <Neos.Fusion.Form:Select>
+                    <Neos.Fusion.Form:Select.Option value={site}>{site}</Neos.Fusion.Form:Select.Option>
+                </Neos.Fusion.Form:Select>
+            </Neos.Fusion.Form:Neos.BackendModule.FieldContainer>
+            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer name="siteDimension" label="" >
+                <Neos.Fusion.Form:Select>
+                    {siteDimension}
+                </Neos.Fusion.Form:Select>
+            </Neos.Fusion.Form:Neos.BackendModule.FieldContainer>
+            <Neos.Fusion.Form:Button>submit</Neos.Fusion.Form:Button>
+        </Neos.Fusion.Form:Form>
+    `
+}

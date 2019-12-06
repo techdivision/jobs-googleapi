@@ -1,0 +1,25 @@
+prototype(TechDivision.Jobs.GoogleApi:Molecule.JobPostingBody) < prototype(Neos.Fusion:Component) {
+
+    // api
+    title = ''
+    lastModified = ''
+    lastCrawl = ''
+    identifier = ''
+
+    renderer = afx`
+        <tr style="border-bottom: 1px solid black">
+            <td>
+                <div>{props.title}</div>
+            </td>
+            <td>
+                <div>{props.lastModified}</div>
+            </td>
+            <td>
+                <div>{props.lastCrawl}</div>
+            </td>
+            <td>
+                <Neos.Fusion.Form:Checkbox name="moduleArguments[nodesToUpdate][]" value={props.identifier} />
+            </td>
+        </tr>
+    `
+}

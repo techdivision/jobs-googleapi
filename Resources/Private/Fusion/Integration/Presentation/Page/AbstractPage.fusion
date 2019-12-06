@@ -1,0 +1,36 @@
+prototype(TechDivision.Jobs.GoogleApi:Page.AbstractPage) < prototype(Neos.Fusion:Component) {
+
+    # add the DocType as processor; because it will break AFX.
+    @process.addDocType = ${'<!DOCTYPE html>' + value}
+
+    head = Neos.Fusion:Join {
+        titleTag = Neos.Fusion:Tag {
+            tagName = 'title'
+        }
+        # Script and CSS includes in the head should go here
+        stylesheets = Neos.Fusion:Join
+        javascripts = Neos.Fusion:Join
+    }
+
+    body {
+        # Script includes before the closing body tag should go here
+        javascripts = Neos.Fusion:Join
+        # This processor appends the rendered javascripts Array to the rendered template
+        @process.appendJavaScripts = ${value + this.javascripts}
+    }
+
+    renderer = afx`
+        <html>
+        <head>
+            <meta charset="UTF-8" />
+            {props.head}
+        </head>
+        <body>
+        {props.body}
+        </body>
+        </html>
+    `
+
+    # enable Neos.Fusion:Debug helper
+    @process.debugDump = Neos.Fusion:DebugDump
+}

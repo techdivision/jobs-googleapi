@@ -1,0 +1,11 @@
+privilegeTargets:
+  'Neos\Neos\Security\Authorization\Privilege\ModulePrivilege':
+    'TechDivision.Jobs.GoogleApi:BackendModule':
+      matcher: 'administration/google-job-api'
+
+roles:
+  'Neos.Neos:Administrator':
+    privileges:
+      -
+        privilegeTarget: 'TechDivision.Jobs.GoogleApi:BackendModule'
+        permission: GRANT

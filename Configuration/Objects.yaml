@@ -1,0 +1,16 @@
+TechDivision\Jobs\GoogleApi\Service\JobIndexingService:
+  arguments:
+    1:
+      object:
+        factoryObjectName: Flowpack\GoogleApiClient\Service\ClientFactory
+        factoryMethodName: create
+
+TechDivision\Jobs\GoogleApi\Service\JobPublishingService:
+  properties:
+    publishingLogger:
+      object:
+        factoryObjectName: Neos\Flow\Log\PsrLoggerFactoryInterface
+        factoryMethodName: get
+        arguments:
+          1:
+            value: publishingLogger

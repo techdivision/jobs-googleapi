@@ -1,0 +1,11 @@
+TechDivision.Jobs.GoogleApi.BackendModuleController {
+
+    index = TechDivision.Jobs.GoogleApi:Index
+
+    showAvailableDimensions = TechDivision.Jobs.GoogleApi:ShowAvailableDimension
+
+    showJobPostingsForSite = TechDivision.Jobs.GoogleApi:ShowJobPostingsForSite
+
+    sendJobPostingUrisToGoogleApi = TechDivision.Jobs.GoogleApi:SendJobPostingUrisToGoogleApi
+
+}

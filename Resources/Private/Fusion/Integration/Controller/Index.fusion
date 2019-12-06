@@ -1,0 +1,35 @@
+prototype(TechDivision.Jobs.GoogleApi:Index) < prototype(TechDivision.Jobs.GoogleApi:Page.DefaultPage) {
+
+    /**
+    * Api
+    * sites => all available site packages
+    */
+
+    body.teaserTitle = 'Select Site-Package'
+    body.teaserText = ''
+
+    @context.sitePackage = Neos.Fusion:Loop {
+        items = ${sites}
+        itemName = 'site'
+        itemKey = 'siteNodeName'
+        itemRenderer = Neos.Fusion:Component {
+            renderer = afx`
+                <Neos.Fusion.Form:Select.Option value={siteNodeName} >{site}</Neos.Fusion.Form:Select.Option>
+            `
+        }
+    }
+
+    body.content = afx`
+        <Neos.Fusion.Form:Form actionUri.action="showAvailableDimensions" >
+
+            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer name="siteNodeName" label="" >
+                <Neos.Fusion.Form:Select>
+                    {sitePackage}
+                </Neos.Fusion.Form:Select>
+            </Neos.Fusion.Form:Neos.BackendModule.FieldContainer>
+
+            <Neos.Fusion.Form:Button>submit</Neos.Fusion.Form:Button>
+
+        </Neos.Fusion.Form:Form>
+    `
+}
