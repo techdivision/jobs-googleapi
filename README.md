@@ -23,7 +23,7 @@ or run `composer require techdivision/jobs-googleapi`.
 ## The backend module
 ![Backend module](./Documentation/Assets/backend_module.png)
 
-##Configuration
+## Configuration
 Enable the API call on deletion:
 
 ```
