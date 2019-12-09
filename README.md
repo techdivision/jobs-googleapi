@@ -1,4 +1,11 @@
 # TechDivision.Jobs.GoogleApi
+
+> _This package is in beta status_
+> It does work from a technical point of view, but there might be a lot of edge cases with the google crawler
+> We are happy if you can provide feedback from real world scenarios.
+> Send them to neos@techdivision.com.
+> Thank you very much!
+
 With Jobs you can access the google indexing API - currently the only valid use of the indexing API.  
 Please be aware that this consumes your site's crawling budget, so use with care!
 
