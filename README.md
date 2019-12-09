@@ -1,9 +1,9 @@
 # TechDivision.Jobs.GoogleApi
 
-> _This package is in beta status_
-> It does work from a technical point of view, but there might be a lot of edge cases with the google crawler
+> __This package is in beta status__  
+> It does work from a technical point of view, but there might be a lot of edge cases with the google crawler.  
 > We are happy if you can provide feedback from real world scenarios.
-> Send them to neos@techdivision.com.
+> Send them to neos@techdivision.com.  
 > Thank you very much!
 
 With Jobs you can access the google indexing API - currently the only valid use of the indexing API.  
@@ -24,8 +24,8 @@ Please follow the package instructions on how to setup your api key.
 
 ### Installation
 
-TechDivision.Jobs.GoogleApi is available via packagist. Add `"techdivision/jobs-googleapi" : "~1.0"` to the require section of the composer.json
-or run `composer require techdivision/jobs-googleapi`.  
+TechDivision.Jobs.GoogleApi is available via packagist. Add `"techdivision/jobs-googleapi" : "1.0.*@dev"` to the require section of the composer.json
+or run `composer require techdivision/jobs-googleapi:1.0.*@dev`.  
 
 ## The backend module
 ![Backend module](./Documentation/Assets/backend_module.png)
