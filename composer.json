@@ -9,7 +9,8 @@
         "neos/fusion-afx": "*"
     },
     "suggest": {
-        "neos/redirecthandler-neosadapter": "*"
+        "neos/redirecthandler-neosadapter": "Sends correct 410 status if job has been deleted",
+        "neos/seo": "Provides sitemap.xml"
     },
     "autoload": {
         "psr-4": {
