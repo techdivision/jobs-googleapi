@@ -3,7 +3,7 @@ declare(strict_types=1);
 namespace TechDivision\Jobs\GoogleApi;
 
 /*
-* This file is part of the TechDivision.Job package.
+* This file is part of the TechDivision.Jobs.GoogleApi package.
 *
 * TechDivision - neos@techdivision.com
 *
@@ -26,7 +26,7 @@ class Package extends BasePackage
 {
 
     /**
-     * @Flow\InjectConfiguration(path="enableAutomaticDeletion")
+     * @Flow\InjectConfiguration(path="enableApiCallOnJobDeletion")
      * @var boolean
      */
     protected $enableApiCallOnJobDeletion;
