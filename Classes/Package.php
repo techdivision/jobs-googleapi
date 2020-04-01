@@ -17,6 +17,7 @@ use Neos\Flow\Core\Bootstrap;
 use Neos\Flow\Package\Package as BasePackage;
 use Neos\ContentRepository\Domain\Model\Workspace;
 use TechDivision\Jobs\GoogleApi\Service\JobPublishingService;
+use Neos\Flow\Annotations as Flow;
 
 /**
  * Class Package
