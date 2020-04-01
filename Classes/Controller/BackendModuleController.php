@@ -2,7 +2,7 @@
 namespace TechDivision\Jobs\GoogleApi\Controller;
 
 /*
-* This file is part of the TechDivision.Job package.
+* This file is part of the TechDivision.Jobs.GoogleApi package.
 *
 * TechDivision - neos@techdivision.com
 *
