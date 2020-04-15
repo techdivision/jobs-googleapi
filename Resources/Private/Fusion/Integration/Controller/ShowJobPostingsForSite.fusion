@@ -5,6 +5,7 @@ prototype(TechDivision.Jobs.GoogleApi:ShowJobPostingsForSite) < prototype(TechDi
     * jobPostings => all available jobPostings
     * siteDimension => selected dimension
     * siteNode => site-package name
+    * flashMessages => result handler
     */
 
     body.teaserTitle = 'Available JobPostings'
@@ -21,6 +22,8 @@ prototype(TechDivision.Jobs.GoogleApi:ShowJobPostingsForSite) < prototype(TechDi
     }
 
     body.content = afx`
+        <TechDivision.Jobs.GoogleApi:Component.FlashMessages @if.flashMessagesAreAvailable={flashMessages} flashMessages={flashMessages} />
+
         <Neos.Fusion.Form:Form form.target.action="sendJobPostingUrisToGoogleApi" >
 
             <Neos.Fusion.Form:Neos.BackendModule.FieldContainer field.name="siteNodeName" label="" >

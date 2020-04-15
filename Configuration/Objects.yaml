@@ -14,3 +14,14 @@ TechDivision\Jobs\GoogleApi\Service\JobPublishingService:
         arguments:
           1:
             value: publishingLogger
+
+TechDivision\Jobs\GoogleApi\Controller\BackendModuleController:
+  properties:
+    updateLogger:
+      object:
+        factoryObjectName: Neos\Flow\Log\PsrLoggerFactoryInterface
+        factoryMethodName: get
+        arguments:
+          1:
+            value: updateLogger
+

@@ -13,7 +13,6 @@ namespace TechDivision\Jobs\GoogleApi\Service;
 
 use DateTime;
 use Google_Service_Indexing_UrlNotification;
-use Neos\Eel\Exception;
 use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Flow\Annotations as Flow;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
@@ -32,15 +31,12 @@ use Psr\Log\LoggerTrait;
 use TechDivision\Jobs\GoogleApi\Exceptions\PublishingException;
 
 /**
- * Google publishing Service
- *
+ * Google publishing service
  * @Flow\Scope("singleton")
  */
 class JobPublishingService
 {
-
     use CreateContentContextTrait;
-
     use LoggerTrait;
 
     /**
@@ -173,10 +169,8 @@ class JobPublishingService
      * @param string $level
      * @param string $message
      * @param array $context
-     * @return null
      */
     public function log($level, $message, array $context = array()) {
         $this->publishingLogger->log($level, $message, $context);
     }
-
 }

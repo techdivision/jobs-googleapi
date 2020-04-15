@@ -33,6 +33,12 @@ class Package extends BasePackage
     protected $enableApiCallOnJobDeletion;
 
     /**
+     * @Flow\InjectConfiguration(path="options.enableApiCallOnJobDeletion")
+     * @var boolean
+     */
+    protected $enableApiCallOnJobDeletion;
+
+    /**
      * @param Bootstrap $bootstrap The current bootstrap
      * @return void
      */

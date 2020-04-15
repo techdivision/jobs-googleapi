@@ -8,6 +8,15 @@
 			<trans-unit id="description" xml:space="preserve">
 				<source>Job Indexing</source>
 			</trans-unit>
+			<trans-unit id="error.nodesToUpdateIsEmpty" xml:space="preserve">
+				<source>No jobPostings selected.</source>
+			</trans-unit>
+			<trans-unit id="successful.nodesUpdated" xml:space="preserve">
+				<source>JobPostings have been updated successfully.</source>
+			</trans-unit>
+			<trans-unit id="error.googleServiceException" xml:space="preserve">
+				<source>An error occurred while updating your jobPostings. Please try it again later. Should the error still occur please contact your system administrator.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

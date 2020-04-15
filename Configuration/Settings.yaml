@@ -29,11 +29,21 @@ Neos:
           createParentDirectories: true
           maximumLogFileSize: 1048576
           logFilesToKeep: 1
+      updateLogger:
+        backend: Neos\Flow\Log\Backend\FileBackend
+        backendOptions:
+          logFileURL: '%FLOW_PATH_DATA%Logs/GoogleUpdate.log'
+          severityThreshold: '%LOG_INFO%'
+          createParentDirectories: true
+          maximumLogFileSize: 1048576
+          logFilesToKeep: 1
 
 TechDivision:
   Jobs:
     GoogleApi:
-      enableApiCallOnJobDeletion: false
+      options:
+        enableApiCallOnJobDeletion: false
+        showGoogleClientConfiguration: false
 
 Flowpack:
   GoogleApiClient:

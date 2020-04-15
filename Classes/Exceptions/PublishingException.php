@@ -11,5 +11,7 @@ namespace TechDivision\Jobs\GoogleApi\Exceptions;
 * source code.
 */
 
-class PublishingException extends \Exception {
+use Neos\Flow\Exception;
+
+class PublishingException extends Exception {
 }

@@ -8,6 +8,15 @@
 			<trans-unit id="description" xml:space="preserve">
 				 <target xml:lang="de" state="translated">Job Indexing</target>
 			</trans-unit>
+			<trans-unit id="error.nodesToUpdateIsEmpty" xml:space="preserve">
+				<target xml:lang="de" state="translated">Es wurden keine JobPostings ausgewählt.</target>
+            </trans-unit>
+			<trans-unit id="successful.nodesUpdated" xml:space="preserve">
+				<target xml:lang="de" state="translated">JobPostings wurden erfolgreich an die GoogleIndexingAPI gesendet.</target>
+            </trans-unit>
+			<trans-unit id="error.googleServiceException" xml:space="preserve">
+				<target xml:lang="de" state="translated">Es ist ein Fehler aufgetreten. Bitte versuchen es später erneut. Sollte der Fehler weiterhin bestehen, kontaktieren Sie Ihren Systemadministrator. </target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

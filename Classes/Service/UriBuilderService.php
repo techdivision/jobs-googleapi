@@ -33,7 +33,6 @@ use TechDivision\Jobs\GoogleApi\Exceptions\NoContextException;
 
 /**
  * Uri builder for creating uris
- *
  * @Flow\Scope("singleton")
  */
 class UriBuilderService {
@@ -66,7 +65,6 @@ class UriBuilderService {
      * @var string
      */
     protected $currentDocumentUri = null;
-
 
     /**
      * @var ControllerContext
