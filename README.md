@@ -46,17 +46,16 @@ After configuration there are a few things you need to do, if you haven't done t
 [Prerequisites for the Indexing API](https://developers.google.com/search/apis/indexing-api/v3/prereqs#verify-site) 
 
 ## Logfiles
-There are two logfiles for more detailed information's.  
-`GooglePublishing.log`: If enableApiCallOnJobDeletion is set to true.  
-`GoogleUpdate.log`: If you update your jobPostings in your BackendModule.  
-Enable showGoogleClientConfiguration if want to show your GoogleClientConfiguration in `GoogleUpdate.log` after updating jobPostings.
+There is a logfile for more detailed information: `JobIndexingLog.log`
+
+Enable logGoogleClientConfiguration if want to show your configuration after updating jobPostings.
 ```
 TechDivision:
   Jobs:
     GoogleApi:
       options:
         ...
-        showGoogleClientConfiguration: false
+        logGoogleClientConfiguration: false
 ```
 
 ## Further packages

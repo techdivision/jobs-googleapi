@@ -21,18 +21,10 @@ Neos:
 
   Flow:
     log:
-      publishingLogger:
+      jobIndexingLogger:
         backend: Neos\Flow\Log\Backend\FileBackend
         backendOptions:
-          logFileURL: '%FLOW_PATH_DATA%Logs/GooglePublishing.log'
-          severityThreshold: '%LOG_INFO%'
-          createParentDirectories: true
-          maximumLogFileSize: 1048576
-          logFilesToKeep: 1
-      updateLogger:
-        backend: Neos\Flow\Log\Backend\FileBackend
-        backendOptions:
-          logFileURL: '%FLOW_PATH_DATA%Logs/GoogleUpdate.log'
+          logFileURL: '%FLOW_PATH_DATA%Logs/JobIndexingLog.log'
           severityThreshold: '%LOG_INFO%'
           createParentDirectories: true
           maximumLogFileSize: 1048576
@@ -43,9 +35,8 @@ TechDivision:
     GoogleApi:
       options:
         enableApiCallOnJobDeletion: false
-        showGoogleClientConfiguration: false
+        logGoogleClientConfiguration: false
 
 Flowpack:
   GoogleApiClient:
     applicationName: ''
-

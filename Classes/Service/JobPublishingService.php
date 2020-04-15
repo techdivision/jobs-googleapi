@@ -43,7 +43,7 @@ class JobPublishingService
      * @var LoggerInterface
      * @Flow\Inject
      */
-    protected $publishingLogger;
+    protected $jobIndexingLogger;
 
     /**
      * @var array
@@ -171,6 +171,6 @@ class JobPublishingService
      * @param array $context
      */
     public function log($level, $message, array $context = array()) {
-        $this->publishingLogger->log($level, $message, $context);
+        $this->jobIndexingLogger->log($level, $message, $context);
     }
 }

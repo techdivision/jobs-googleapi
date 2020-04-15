@@ -42,16 +42,16 @@ class BackendModuleController extends ActionController
     use LoggerTrait;
 
     /**
-     * @Flow\InjectConfiguration(path="options.showGoogleClientConfiguration")
+     * @Flow\InjectConfiguration(path="options.logGoogleClientConfiguration")
      * @var bool
      */
-    protected $showGoogleClientConfiguration;
+    protected $logGoogleClientConfiguration;
 
     /**
      * @var LoggerInterface
      * @Flow\Inject
      */
-    protected $updateLogger;
+    protected $jobIndexingLogger;
 
     /**
      * @Flow\Inject
@@ -124,9 +124,9 @@ class BackendModuleController extends ActionController
             $siteSelectOptions[$site->getNodeName()] = $site->getNodeName() . " - " . $site->getName();
         }
 
-        $this->view->assignMultiple(array(
+        $this->view->assignMultiple([
             'sites' => $siteSelectOptions,
-        ));
+        ]);
     }
 
     /**
@@ -142,10 +142,10 @@ class BackendModuleController extends ActionController
             array_push($availableDimensions, $rootNode->getDimensions()['language'][0]);
         }
 
-        $this->view->assignMultiple(array(
+        $this->view->assignMultiple([
             'site' => $siteNodeName,
             'dimensions' => $availableDimensions,
-        ));
+        ]);
     }
 
     /**
@@ -162,12 +162,12 @@ class BackendModuleController extends ActionController
         $query = new FlowQuery([$selectedRootNode]);
         $jobPostings = $query->find('[instanceof TechDivision.Jobs:Document.JobPosting]')->get();
 
-        $this->view->assignMultiple(array(
+        $this->view->assignMultiple([
             'jobPostings' => $jobPostings,
             'siteNode' => $siteNodeName,
             'siteDimension' => $siteDimension,
             'flashMessages' => $flashMessages
-        ));
+        ]);
     }
 
     /**
@@ -207,7 +207,7 @@ class BackendModuleController extends ActionController
             }
         }
 
-        if ($this->showGoogleClientConfiguration) {
+        if ($this->logGoogleClientConfiguration) {
             $this->info('Client configuration');
             $this->info('application_name: ' . $this->jobIndexingService->getClient()->getConfig('application_name'));
             $this->info('base_path: ' . $this->jobIndexingService->getClient()->getConfig('base_path'));
@@ -320,6 +320,6 @@ class BackendModuleController extends ActionController
      * @param array $context
      */
     public function log($level, $message, array $context = array()) {
-        $this->updateLogger->log($level, $message, $context);
+        $this->jobIndexingLogger->log($level, $message, $context);
     }
 }

@@ -1,8 +1,9 @@
 (function() {
-    $( document ).ready(function() {
-        if ($("#neos-notification-container")) {
+    document.addEventListener("DOMContentLoaded", function(event) {
+        let neosNotificationContainer = document.getElementById('neos-notification-container');
+        if (neosNotificationContainer) {
             setTimeout(function() {
-                $("#neos-notification-container").hide();
+                neosNotificationContainer.style.display = "none";
             }, 10000);
         }
     });
