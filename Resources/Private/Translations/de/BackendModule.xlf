@@ -15,7 +15,7 @@
 				<target xml:lang="de" state="translated">JobPostings wurden erfolgreich an die GoogleIndexingAPI gesendet.</target>
             </trans-unit>
 			<trans-unit id="error.googleServiceException" xml:space="preserve">
-				<target xml:lang="de" state="translated">Es ist ein Fehler aufgetreten. Bitte versuchen es später erneut. Sollte der Fehler weiterhin bestehen, kontaktieren Sie Ihren Systemadministrator. </target>
+				<target xml:lang="de" state="translated">Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut. Sollte der Fehler weiterhin bestehen, kontaktieren Sie Ihren Systemadministrator. </target>
             </trans-unit>
 		</body>
 	</file>
