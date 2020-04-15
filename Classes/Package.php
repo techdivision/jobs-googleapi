@@ -25,13 +25,6 @@ use Neos\Flow\Annotations as Flow;
  */
 class Package extends BasePackage
 {
-
-    /**
-     * @Flow\InjectConfiguration(path="enableApiCallOnJobDeletion")
-     * @var boolean
-     */
-    protected $enableApiCallOnJobDeletion;
-
     /**
      * @Flow\InjectConfiguration(path="options.enableApiCallOnJobDeletion")
      * @var boolean
