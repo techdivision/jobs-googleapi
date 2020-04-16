@@ -43,7 +43,22 @@ TechDivision:
 ```
 
 After configuration there are a few things you need to do, if you haven't done them already:
-[Prerequisites for the Indexing API](https://developers.google.com/search/apis/indexing-api/v3/prereqs#verify-site) 
+[Prerequisites for the Indexing API](https://developers.google.com/search/apis/indexing-api/v3/prereqs#verify-site)  
+
+####Important: After creating the project and a new service account you need to verify the site ownership!
+Follow these steps to verify your service account as an **owner**.  
+
+1. Follow the [recommended steps to verify ownership of your property.](https://support.google.com/webmasters/answer/9008080)  
+2. After your property has been verified, open [Search Console](https://www.google.com/webmasters/tools/home).  
+3. Click your verified property.
+4. Click Settings.
+5. Go to user settings.
+6. Click manage property owner. (You need to be a Property-Owner!)
+![Google Search Console - User settings](Documentation/Assets/search_console_users.png)
+7. Add your service account mail.  
+The email address has a format similar to the following:  
+my-service-account@project-name.google.com.iam.gserviceaccount.com
+![Google Search Console - Add property owner](Documentation/Assets/search_console_add_owner.png)
 
 ## Logfiles
 There is a logfile for more detailed information: `JobIndexingLog.log`
