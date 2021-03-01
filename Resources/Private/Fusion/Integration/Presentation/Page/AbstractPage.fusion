@@ -9,7 +9,13 @@ prototype(TechDivision.Jobs.GoogleApi:Page.AbstractPage) < prototype(Neos.Fusion
         }
         # Script and CSS includes in the head should go here
         stylesheets = Neos.Fusion:Join
-        javascripts = Neos.Fusion:Join
+        javascripts = Neos.Fusion:Tag {
+            tagName = 'script'
+            attributes.src = 'stylesheet'
+            attributes.src = Neos.Fusion:ResourceUri {
+                path = "resource://TechDivision.Jobs.GoogleApi/Public/JavaScript/Script.js"
+            }
+        }
     }
 
     body {
@@ -21,13 +27,13 @@ prototype(TechDivision.Jobs.GoogleApi:Page.AbstractPage) < prototype(Neos.Fusion
 
     renderer = afx`
         <html>
-        <head>
-            <meta charset="UTF-8" />
-            {props.head}
-        </head>
-        <body>
-        {props.body}
-        </body>
+            <head>
+                <meta charset="UTF-8" />
+                {props.head}
+            </head>
+            <body>
+                {props.body}
+            </body>
         </html>
     `
 

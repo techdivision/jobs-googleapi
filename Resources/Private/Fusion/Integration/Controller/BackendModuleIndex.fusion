@@ -5,7 +5,4 @@ TechDivision.Jobs.GoogleApi.BackendModuleController {
     showAvailableDimensions = TechDivision.Jobs.GoogleApi:ShowAvailableDimension
 
     showJobPostingsForSite = TechDivision.Jobs.GoogleApi:ShowJobPostingsForSite
-
-    sendJobPostingUrisToGoogleApi = TechDivision.Jobs.GoogleApi:SendJobPostingUrisToGoogleApi
-
 }

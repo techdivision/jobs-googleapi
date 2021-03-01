@@ -14,15 +14,15 @@ prototype(TechDivision.Jobs.GoogleApi:Index) < prototype(TechDivision.Jobs.Googl
         itemKey = 'siteNodeName'
         itemRenderer = Neos.Fusion:Component {
             renderer = afx`
-                <Neos.Fusion.Form:Select.Option value={siteNodeName} >{site}</Neos.Fusion.Form:Select.Option>
+                <Neos.Fusion.Form:Select.Option option.value={siteNodeName} >{site}</Neos.Fusion.Form:Select.Option>
             `
         }
     }
 
     body.content = afx`
-        <Neos.Fusion.Form:Form actionUri.action="showAvailableDimensions" >
+        <Neos.Fusion.Form:Form form.target.action="showAvailableDimensions" >
 
-            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer name="siteNodeName" label="" >
+            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer field.name="siteNodeName" label="" >
                 <Neos.Fusion.Form:Select>
                     {sitePackage}
                 </Neos.Fusion.Form:Select>

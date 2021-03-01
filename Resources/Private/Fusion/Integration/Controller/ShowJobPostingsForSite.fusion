@@ -5,6 +5,7 @@ prototype(TechDivision.Jobs.GoogleApi:ShowJobPostingsForSite) < prototype(TechDi
     * jobPostings => all available jobPostings
     * siteDimension => selected dimension
     * siteNode => site-package name
+    * flashMessages => result handler
     */
 
     body.teaserTitle = 'Available JobPostings'
@@ -21,16 +22,18 @@ prototype(TechDivision.Jobs.GoogleApi:ShowJobPostingsForSite) < prototype(TechDi
     }
 
     body.content = afx`
-        <Neos.Fusion.Form:Form actionUri.action="sendJobPostingUrisToGoogleApi" >
+        <TechDivision.Jobs.GoogleApi:Component.FlashMessages @if.flashMessagesAreAvailable={flashMessages} flashMessages={flashMessages} />
 
-            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer name="siteNodeName" label="" >
+        <Neos.Fusion.Form:Form form.target.action="sendJobPostingUrisToGoogleApi" >
+
+            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer field.name="siteNodeName" label="" >
                 <Neos.Fusion.Form:Select>
-                    <Neos.Fusion.Form:Select.Option value={siteNode}>{siteNode}</Neos.Fusion.Form:Select.Option>
+                    <Neos.Fusion.Form:Select.Option option.value={siteNode}>{siteNode}</Neos.Fusion.Form:Select.Option>
                 </Neos.Fusion.Form:Select>
             </Neos.Fusion.Form:Neos.BackendModule.FieldContainer>
-            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer name="siteDimension" label="" >
+            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer field.name="siteDimension" label="" >
                 <Neos.Fusion.Form:Select>
-                    <Neos.Fusion.Form:Select.Option value={siteDimension}>{siteDimension}</Neos.Fusion.Form:Select.Option>
+                    <Neos.Fusion.Form:Select.Option option.value={siteDimension}>{siteDimension}</Neos.Fusion.Form:Select.Option>
                 </Neos.Fusion.Form:Select>
             </Neos.Fusion.Form:Neos.BackendModule.FieldContainer>
 

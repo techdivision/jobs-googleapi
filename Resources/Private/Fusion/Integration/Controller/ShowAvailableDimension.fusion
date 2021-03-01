@@ -16,19 +16,19 @@ prototype(TechDivision.Jobs.GoogleApi:ShowAvailableDimension) < prototype(TechDi
         itemKey = 'siteDimension'
         itemRenderer = Neos.Fusion:Component {
             renderer = afx`
-                <Neos.Fusion.Form:Select.Option value={dimension} >{dimension}</Neos.Fusion.Form:Select.Option>
+                <Neos.Fusion.Form:Select.Option option.value={dimension} >{dimension}</Neos.Fusion.Form:Select.Option>
             `
         }
     }
 
     body.content = afx`
-        <Neos.Fusion.Form:Form actionUri.action="showJobPostingsForSite" >
-            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer name="siteNodeName" label="" >
+        <Neos.Fusion.Form:Form form.target.action="showJobPostingsForSite" >
+            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer field.name="siteNodeName" label="" >
                 <Neos.Fusion.Form:Select>
-                    <Neos.Fusion.Form:Select.Option value={site}>{site}</Neos.Fusion.Form:Select.Option>
+                    <Neos.Fusion.Form:Select.Option option.value={site}>{site}</Neos.Fusion.Form:Select.Option>
                 </Neos.Fusion.Form:Select>
             </Neos.Fusion.Form:Neos.BackendModule.FieldContainer>
-            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer name="siteDimension" label="" >
+            <Neos.Fusion.Form:Neos.BackendModule.FieldContainer field.name="siteDimension" label="" >
                 <Neos.Fusion.Form:Select>
                     {siteDimension}
                 </Neos.Fusion.Form:Select>
