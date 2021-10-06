@@ -28,7 +28,7 @@ TechDivision.Jobs.GoogleApi is available via packagist. Add `"techdivision/jobs-
 or run `composer require techdivision/jobs-googleapi:1.0.*@dev`.  
 
 ## The backend module
-![Backend module](./Documentation/Assets/backend_module.png)
+![Backend module](Documentation/Assets/backend_module.png)
 
 ## Configuration
 Enable the API call on deletion:

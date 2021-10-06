@@ -13,14 +13,12 @@ namespace TechDivision\Jobs\GoogleApi\Controller;
 
 use Google_Service_Exception;
 use Neos\ContentRepository\Domain\Model\Node;
-use Neos\ContentRepository\Domain\Model\NodeData;
 use Neos\ContentRepository\Domain\Service\ContentDimensionCombinator;
 use Neos\ContentRepository\Domain\Service\Context;
 use Neos\ContentRepository\Domain\Service\ContextFactoryInterface;
 use Neos\Eel\FlowQuery\FlowQuery;
 use Neos\Error\Messages\Message;
 use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Exception;
 use Neos\Flow\I18n\Translator;
 use Neos\Flow\Mvc\Controller\ActionController;
 use Neos\Neos\Domain\Model\Site;
@@ -51,7 +49,7 @@ class BackendModuleController extends ActionController
      * @var LoggerInterface
      * @Flow\Inject
      */
-    protected $jobIndexingLogger;
+    protected $logger;
 
     /**
      * @Flow\Inject
@@ -320,6 +318,6 @@ class BackendModuleController extends ActionController
      * @param array $context
      */
     public function log($level, $message, array $context = array()) {
-        $this->jobIndexingLogger->log($level, $message, $context);
+        $this->logger->log($level, $message, $context);
     }
 }

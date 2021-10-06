@@ -17,11 +17,8 @@ use Neos\Flow\Annotations as Flow;
 use Neos\ContentRepository\Domain\Factory\NodeFactory;
 use Neos\ContentRepository\Domain\Model\NodeData;
 use Neos\Flow\Core\Bootstrap;
-use Neos\Flow\Exception;
-use Neos\Flow\Http\Request;
-use Neos\Flow\Http\Response;
-use Neos\Flow\Http\Uri;
 use Neos\Flow\Mvc\ActionRequest;
+use Neos\Flow\Mvc\ActionResponse;
 use Neos\Flow\Mvc\Controller\Arguments;
 use Neos\Flow\Mvc\Controller\ControllerContext;
 use Neos\Flow\Mvc\Routing\Exception\MissingActionNameException;
@@ -177,7 +174,7 @@ class UriBuilderService {
         $request = null;
 
         if($this->uriBeforePath) {
-            $request = Request::create(new Uri($this->uriBeforePath));
+            $request = new \HttpRequest($this->uriBeforePath);
             // needed to avoid appearing index.php in the uri path
             putenv('FLOW_REWRITEURLS=true');
         } else if(PHP_SAPI === 'cli') {
@@ -201,7 +198,7 @@ class UriBuilderService {
 
         $this->controllerContext =  new ControllerContext(
             $actionReqeust,
-            new Response(),
+            new ActionResponse(),
             new Arguments(array()),
             $this->flowMvcUriBuilder
         );

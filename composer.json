@@ -3,6 +3,7 @@
     "type": "neos-plugin",
     "description": "Package to send updated or deleted JobPostings to the Google Indexer API",
     "require": {
+        "neos/flow": "^7.0",
         "techdivision/jobs" : "^2.0",
         "flowpack/googleapiclient": "^1.2",
         "neos/fusion-form": "*"

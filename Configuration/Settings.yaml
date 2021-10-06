@@ -21,14 +21,16 @@ Neos:
 
   Flow:
     log:
-      jobIndexingLogger:
-        backend: Neos\Flow\Log\Backend\FileBackend
-        backendOptions:
-          logFileURL: '%FLOW_PATH_DATA%Logs/JobIndexingLog.log'
-          severityThreshold: '%LOG_INFO%'
-          createParentDirectories: true
-          maximumLogFileSize: 1048576
-          logFilesToKeep: 1
+      psr3:
+        'Neos\Flow\Log\PsrLoggerFactory':
+          jobIndexingLogger:
+            backend: Neos\Flow\Log\Backend\FileBackend
+            backendOptions:
+              logFileURL: '%FLOW_PATH_DATA%Logs/JobIndexingLog.log'
+              severityThreshold: '%LOG_INFO%'
+              createParentDirectories: true
+              maximumLogFileSize: 1048576
+              logFilesToKeep: 1
 
 TechDivision:
   Jobs:
