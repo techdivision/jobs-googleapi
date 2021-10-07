@@ -7,10 +7,20 @@ TechDivision\Jobs\GoogleApi\Service\JobIndexingService:
 
 TechDivision\Jobs\GoogleApi\Service\JobPublishingService:
   properties:
-    publishingLogger:
+    jobIndexingLogger:
       object:
         factoryObjectName: Neos\Flow\Log\PsrLoggerFactoryInterface
         factoryMethodName: get
         arguments:
           1:
-            value: publishingLogger
+            value: jobIndexingLogger
+
+TechDivision\Jobs\GoogleApi\Controller\BackendModuleController:
+  properties:
+    jobIndexingLogger:
+      object:
+        factoryObjectName: Neos\Flow\Log\PsrLoggerFactoryInterface
+        factoryMethodName: get
+        arguments:
+          1:
+            value: jobIndexingLogger

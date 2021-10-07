@@ -3,10 +3,10 @@
     "type": "neos-plugin",
     "description": "Package to send updated or deleted JobPostings to the Google Indexer API",
     "require": {
-        "techdivision/jobs" : "^1.0",
-        "flowpack/googleapiclient": "^1.1",
-        "neos/fusion-form": "*",
-        "neos/fusion-afx": "*"
+        "neos/flow": "^7.0",
+        "techdivision/jobs" : "^2.0",
+        "flowpack/googleapiclient": "^1.2",
+        "neos/fusion-form": "*"
     },
     "suggest": {
         "neos/redirecthandler-neosadapter": "Sends correct 410 status if job has been deleted",
